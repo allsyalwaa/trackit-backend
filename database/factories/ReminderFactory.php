@@ -18,8 +18,7 @@ class ReminderFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(),
-            'date' => $this->faker->date(),
-            'time' => $this->faker->time(),
+            'reminder' => $this->faker->dateTime(),
             'description' => $this->faker->paragraph(),
         ];
     }

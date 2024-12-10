@@ -11,8 +11,7 @@ class Reminder extends Model
 
     protected $fillable=[
         'title',
-        'date',
-        'time',
+        'reminder',
         'description',
     ];
 
