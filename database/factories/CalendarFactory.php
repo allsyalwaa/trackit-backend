@@ -17,9 +17,9 @@ class CalendarFactory extends Factory
     public function definition(): array
     {
         return [
-            'date' => $this->faker->date(),
+            'calendar' => $this->faker->dateTime(),
             'title' => $this->faker->sentence(),
-            'time' => $this->faker->time(),
+
         ];
     }
 }
