@@ -17,4 +17,13 @@ class NoteController extends Controller
 
         return response()->json($notes->get());
     }
+
+    public function show($id){
+        $note = Note::query()->find($id);
+        return response()->json($note);
+    }
+
+    public function showBinding(Note $note){
+        return response()->json($note);
+    }
 }

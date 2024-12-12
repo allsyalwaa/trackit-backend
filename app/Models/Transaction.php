@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Transaction extends Model
 {
@@ -11,7 +12,11 @@ class Transaction extends Model
 
     protected $fillable=[
       'title',
-      'balance_name',
       'amount',
     ];
+
+    public function balance():BelongsTo
+    {
+        return $this->belongsTo(Balance::class);
+    }
 }

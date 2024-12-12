@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('balance_name');
             $table->bigInteger('amount');
+
+            $table->unsignedBigInteger('balance_id');
+            $table->foreign('balance_id')->references('id')->on('balances')->cascadeOnDelete();
             $table->timestamps();
         });
     }

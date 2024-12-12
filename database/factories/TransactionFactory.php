@@ -18,7 +18,6 @@ class TransactionFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(),
-            'balance_name' => $this->faker->name(),
             'amount' => $this->faker->randomFloat(2, 10, 100),
         ];
     }

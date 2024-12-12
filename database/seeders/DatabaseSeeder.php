@@ -30,8 +30,7 @@ class DatabaseSeeder extends Seeder
         Note::factory(10)->create();
         Reminder::factory(10)->create();
         Task::factory(10)->create();
-        Balance::factory(10)->create();
-        Transaction::factory(10)->create();
+        Balance::factory(10)->has(Transaction::factory()->count(10))->create();
         Calendar::factory(10)->create();
         Alarm::factory(10)->create();
     }
