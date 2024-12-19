@@ -15,6 +15,7 @@ class Transaction extends Model
     protected $fillable=[
       'title',
       'amount',
+        'balance_id'
     ];
 
     protected $hidden=[
