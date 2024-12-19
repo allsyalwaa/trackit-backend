@@ -26,4 +26,8 @@ class NoteController extends Controller
     public function showBinding(Note $note){
         return response()->json($note);
     }
+
+    public function store(){
+        return response()->json(['hello'=>'world']);
+    }
 }

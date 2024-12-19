@@ -26,23 +26,30 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/notes', [NoteController::class, 'index']);
+Route::post('/notes', [NoteController::class, 'store']);
 Route::get('/notes/{note}', [NoteController::class, 'show']);
 Route::get('/notes/binding/{note:title}', [NoteController::class, 'showBinding']);
+
 Route::get('/reminders', [ReminderController::class, 'index']);
 Route::get('/reminders/{reminder}', [ReminderController::class, 'show']);
 Route::get('/reminders/binding/{reminder:title}', [ReminderController::class, 'showBinding']);
+
 Route::get( '/tasks', [TaskController::class, 'index']);
 Route::get('/tasks/{task}', [TaskController::class, 'show']);
 Route::get('/tasks/binding/{task:title}', [TaskController::class, 'showBinding']);
+
 Route::get('/balances', [BalanceController::class, 'index']);
 Route::get('/balances/{balance}', [BalanceController::class, 'show']);
 Route::get('/balances/binding/{balance:title}', [BalanceController::class, 'showBinding']);
+
 Route::get('/transactions', [TransactionController::class, 'index']);
 Route::get('/transactions/{transaction}', [TransactionController::class, 'show']);
 Route::get('/transactions/binding/{transaction:title}', [TransactionController::class, 'showBinding']);
+
 Route::get('/calendar', [CalendarController::class, 'index']);
 Route::get('/calendar/{date}', [CalendarController::class, 'show']);
 Route::get('/calendar/binding/{date:title}', [CalendarController::class, 'showBinding']);
+
 Route::get('/alarms', [AlarmController::class, 'index']);
 Route::get('/alarms/{alarm}', [AlarmController::class, 'show']);
 Route::get('/alarms/binding/{alarm:name}', [AlarmController::class, 'showBinding']);
