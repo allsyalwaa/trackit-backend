@@ -19,6 +19,7 @@ class NoteFactory extends Factory
         return [
             'title' => $this->faker->title(),
             'description' => $this->faker->text(),
+
         ];
     }
 }

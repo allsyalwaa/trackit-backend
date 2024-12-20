@@ -31,6 +31,7 @@ class TaskController extends Controller
         $validateData = $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'completed' => 'nullable|boolean',
         ]);
 
         Task::query()->create($validateData);
@@ -53,6 +54,7 @@ class TaskController extends Controller
         $validateData = $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'completed' => 'nullable|boolean',
 
         ]);
         $task->update($validateData);
@@ -60,5 +62,19 @@ class TaskController extends Controller
             'success' => true,
 
         ], Response::HTTP_ACCEPTED);
+    }
+
+    public function updateStatus(Request $request, Task $task)
+    {
+        $validateData = $request->validate([
+            'completed' => 'required|boolean',
+        ]);
+
+        $task->update($validateData);
+        return response()->json([
+            'success' => true,
+
+        ], Response::HTTP_ACCEPTED);
+
     }
 }

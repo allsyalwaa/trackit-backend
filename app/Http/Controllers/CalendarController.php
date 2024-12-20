@@ -48,7 +48,7 @@ class CalendarController extends Controller
 
     public function update(Request $request, Calendar $date){
         $validateData = $request->validate([
-            'calendar' => 'required',
+
             'title' => 'required',
 
         ]);

@@ -33,6 +33,7 @@ class NoteController extends Controller
         $validateData = $request->validate([
             'title' => 'required',
             'description' => 'required',
+
         ]);
 
         Note::create($validateData);
@@ -59,6 +60,7 @@ class NoteController extends Controller
         $validateData = $request->validate([
             'title' => 'required',
             'description' => 'required',
+
 
         ]);
         $note->update($validateData);

@@ -15,4 +15,11 @@ class Reminder extends Model
         'description',
     ];
 
+    public function getCasts()
+    {
+        return [
+            'reminder' => 'datetime',
+        ];
+    }
+
 }
